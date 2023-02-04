@@ -8,8 +8,6 @@ import lombok.Getter;
 @AllArgsConstructor
 @Getter
 //TODO VO 객체라 hasHash인가 equals 관련된거 override 필요함
-public class Subject {
-    Subject parents;
-    String subject;
-    Category category;
+public class Season {
+    String season;
 }
