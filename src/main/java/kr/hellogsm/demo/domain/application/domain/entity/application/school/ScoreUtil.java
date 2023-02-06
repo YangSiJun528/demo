@@ -1,8 +1,5 @@
-package kr.hellogsm.demo.domain.application.domain.entity.application.school.score;
+package kr.hellogsm.demo.domain.application.domain.entity.application.school;
 
-import kr.hellogsm.demo.domain.application.domain.entity.record.Rating;
-import kr.hellogsm.demo.domain.application.domain.entity.record.Season;
-import kr.hellogsm.demo.domain.application.domain.entity.record.Subject;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
@@ -53,7 +50,7 @@ public class ScoreUtil {
         AtomicLong index = new AtomicLong();
         Random random = new Random();
         for (Title title : titles) {
-            randTitles.add(new Score(index.getAndIncrement(), title, new BigDecimal(random.nextInt(5)+1)));
+            randTitles.add(new Score(index.getAndIncrement(), title, new BigDecimal(random.nextInt(5)+1), null));
         }
         return randTitles;
     }

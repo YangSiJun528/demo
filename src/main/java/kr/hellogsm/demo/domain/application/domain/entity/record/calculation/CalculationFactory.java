@@ -1,10 +1,7 @@
 package kr.hellogsm.demo.domain.application.domain.entity.record.calculation;
 
 import kr.hellogsm.demo.domain.application.domain.entity.application.school.AcademicRecord;
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;

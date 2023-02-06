@@ -1,14 +1,15 @@
 package kr.hellogsm.demo.domain.application.domain.entity.record;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
+import java.util.concurrent.atomic.AtomicLong;
 
 public class RecodeUtil {
-    // 예네들 따로 분리해야 함
-    private List<Season> seasons = new ArrayList<Season>(List.of(new Season("1-1"), new Season("1-2"),
-            new Season("2-1"), new Season("2-2"), new Season("3-1"), new Season("3-2")));
+    private List<Semester> semesters = new ArrayList<>(List.of(Semester.ONETOONE, Semester.ONETOTWO, Semester.TWOTOONE, Semester.TWOTOTWO, Semester.THREETOONE));
 
-    private List<Season> grades = new ArrayList<Season>(List.of(new Season("1"), new Season("2"), new Season("3")));
+    private List<Semester> grades = new ArrayList<>(List.of(Semester.ONE, Semester.TWO, Semester.THREE));
 
     //환산점은 꼭 있어야 함
     private List<Subject> 일반subjects = new ArrayList<>(List.of(
@@ -41,11 +42,11 @@ public class RecodeUtil {
             //        new Subject(봉사, "환산점", Category.NonSubject) 비교과 환산점/일수는 모든 학년 당 하나 뿐임
     ));
 
-    public List<Season> getSeasons() {
-        return seasons;
+    public List<Semester> getSeasons() {
+        return semesters;
     }
 
-    public List<Season> getGrades() { return grades; }
+    public List<Semester> getGrades() { return grades; }
 
     public List<Subject> get비교과subjects() {
         return 비교과subjects;
@@ -69,15 +70,15 @@ public class RecodeUtil {
 
     // 클래스 안인데 굳이 getter 써야함? -> getter에 어떤 기능이 추가될지 모르니까 쓰는게 낫지 않나?
     public List<Rating> callRandom일반Ratings() {
-        return Rating.createRandomRatings(getSeasons(), get일반subjects());
+        return this.createRandomRatings(getSeasons(), get일반subjects());
     }
 
     public List<Rating> callRandom예체능Ratings() {
-        return Rating.createRandomRatings(getSeasons(), get예체능subjects());
+        return this.createRandomRatings(getSeasons(), get예체능subjects());
     }
 
     public List<Rating> callRandom비교과Ratings() {
-        return Rating.createRandomRatings(getGrades(), get비교과subjects());
+        return this.createRandomRatings(getGrades(), get비교과subjects());
     }
 
     // 정확히 따지면 비교과 부분은 형식이 달라서 올바른 메서드는 아님, 테스트 용도
@@ -87,5 +88,17 @@ public class RecodeUtil {
         rs.addAll(callRandom예체능Ratings());
         rs.addAll(callRandom비교과Ratings());
         return rs;
+    }
+
+    public List<Rating> createRandomRatings(List<Semester> semesters, List<Subject> subjects) {
+        List<Rating> randRatings = new ArrayList<>();
+        AtomicLong index = new AtomicLong();
+        Random random = new Random();
+        for (Semester semester : semesters) {
+            for (Subject subject : subjects) {
+                randRatings.add(new Rating(index.getAndIncrement(), semester, subject, new BigDecimal(random.nextInt(5)+1), null));
+            }
+        }
+        return randRatings;
     }
 }
