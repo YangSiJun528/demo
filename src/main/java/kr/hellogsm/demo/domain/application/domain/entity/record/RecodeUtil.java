@@ -1,15 +1,9 @@
-package kr.hellogsm.demo.domain.application.repository;
-
-import kr.hellogsm.demo.domain.application.domain.entity.record.Category;
-import kr.hellogsm.demo.domain.application.domain.entity.record.Rating;
-import kr.hellogsm.demo.domain.application.domain.entity.record.Season;
-import kr.hellogsm.demo.domain.application.domain.entity.record.Subject;
+package kr.hellogsm.demo.domain.application.domain.entity.record;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class DummyRecodeRepo {
-    
+public class RecodeUtil {
     // 예네들 따로 분리해야 함
     private List<Season> seasons = new ArrayList<Season>(List.of(new Season("1-1"), new Season("1-2"),
             new Season("2-1"), new Season("2-2"), new Season("3-1"), new Season("3-2")));
@@ -44,7 +38,7 @@ public class DummyRecodeRepo {
 //            new Subject(출결, "환산일수", Category.NonSubject),
 //            new Subject(출결, "환산점", Category.NonSubject),
             new Subject(봉사, "시간", Category.NonSubject)
-    //        new Subject(봉사, "환산점", Category.NonSubject) 비교과 환산점/일수는 모든 학년 당 하나 뿐임
+            //        new Subject(봉사, "환산점", Category.NonSubject) 비교과 환산점/일수는 모든 학년 당 하나 뿐임
     ));
 
     public List<Season> getSeasons() {

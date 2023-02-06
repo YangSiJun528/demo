@@ -3,18 +3,16 @@ package kr.hellogsm.demo.domain.application.domain.repository;
 import kr.hellogsm.demo.domain.application.domain.entity.record.Category;
 import kr.hellogsm.demo.domain.application.domain.entity.record.Rating;
 import kr.hellogsm.demo.domain.application.domain.entity.record.Season;
-import kr.hellogsm.demo.domain.application.domain.entity.record.Subject;
-import kr.hellogsm.demo.domain.application.repository.DummyRecodeRepo;
+import kr.hellogsm.demo.domain.application.domain.entity.record.RecodeUtil;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
 import java.util.Map;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 class DummyRecodeRepoTest {
 
-    DummyRecodeRepo dummyRecodeRepo = new DummyRecodeRepo();
+    RecodeUtil dummyRecodeRepo = new RecodeUtil();
 
     @Test
     void callRandomRatings() {

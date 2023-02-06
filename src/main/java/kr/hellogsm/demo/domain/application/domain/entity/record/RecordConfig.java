@@ -1,12 +1,10 @@
 package kr.hellogsm.demo.domain.application.domain.entity.record;
 
-import kr.hellogsm.demo.domain.application.repository.DummyRecodeRepo;
-
 import java.util.List;
 
 public class RecordConfig {
 
-    final private DummyRecodeRepo dummyRepo = new DummyRecodeRepo();
+    final private RecodeUtil dummyRepo = new RecodeUtil();
 
     List<Season> seasons = dummyRepo.getSeasons();
 
