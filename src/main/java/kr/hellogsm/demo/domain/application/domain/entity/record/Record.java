@@ -2,7 +2,7 @@ package kr.hellogsm.demo.domain.application.domain.entity.record;
 
 import java.util.List;
 
-public class RecordConfig {
+public class Record {
 
     final private RecodeUtil dummyRepo = new RecodeUtil();
 

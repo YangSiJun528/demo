@@ -1,18 +1,17 @@
 package kr.hellogsm.demo.domain.application.domain.entity.application.school.score;
 
+import jakarta.persistence.Embeddable;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-import java.math.BigDecimal;
 
+@Embeddable
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
-public class Score {
+public class Title {
 
-    Long id;
-    Title title;
-    BigDecimal value;
-
+    Title parents;
+    String value;
 }
