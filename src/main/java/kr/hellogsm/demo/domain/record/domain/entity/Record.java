@@ -1,8 +1,6 @@
 package kr.hellogsm.demo.domain.record.domain.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.*;
 
 import java.util.List;
 
@@ -14,5 +12,8 @@ public class Record {
 
     @OneToMany
     private List<Season> freeSemesters; // 자유학기 리스트
+
+    @Enumerated(EnumType.STRING)
+    AcademicRecord academicRecord;
 
 }

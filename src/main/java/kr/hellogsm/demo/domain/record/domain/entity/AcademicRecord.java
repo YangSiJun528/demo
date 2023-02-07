@@ -1,4 +1,4 @@
-package kr.hellogsm.demo.domain.application.entity.domain.score;
+package kr.hellogsm.demo.domain.record.domain.entity;
 
 public enum AcademicRecord {
     CANDIDATE,
