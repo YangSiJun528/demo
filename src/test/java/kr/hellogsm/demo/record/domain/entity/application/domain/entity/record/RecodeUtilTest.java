@@ -1,4 +1,4 @@
-package kr.hellogsm.demo.domain.application.domain.entity.record;
+package kr.hellogsm.demo.record.domain.entity.application.domain.entity.record;
 
 import org.junit.jupiter.api.Test;
 

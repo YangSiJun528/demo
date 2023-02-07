@@ -1,4 +1,4 @@
-package kr.hellogsm.demo.domain.application.domain.entity.application.school.score;
+package kr.hellogsm.demo.record.domain.entity.application.domain.entity.application.school.score;
 
 import kr.hellogsm.demo.domain.application.domain.entity.application.school.Score;
 import kr.hellogsm.demo.domain.application.domain.entity.application.school.ScoreUtil;

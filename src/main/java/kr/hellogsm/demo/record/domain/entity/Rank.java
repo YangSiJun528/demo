@@ -1,4 +1,4 @@
-package kr.hellogsm.demo.domain;
+package kr.hellogsm.demo.record.domain.entity;
 
 //TODO 비교과 DTO에만 사용하기
 public enum Rank {

@@ -1,4 +1,4 @@
-package kr.hellogsm.demo.domain.calculation;
+package kr.hellogsm.demo.record.domain.entity.calculation;
 
 
 

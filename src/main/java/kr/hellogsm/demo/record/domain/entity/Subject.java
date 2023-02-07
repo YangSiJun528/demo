@@ -1,4 +1,4 @@
-package kr.hellogsm.demo.domain;
+package kr.hellogsm.demo.record.domain.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

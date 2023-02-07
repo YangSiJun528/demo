@@ -1,4 +1,4 @@
-package kr.hellogsm.demo.domain;
+package kr.hellogsm.demo.record.domain.entity;
 
 // TODO 일단 만들긴 했는데 사용안하는 중
 public enum Semester {
