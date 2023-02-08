@@ -1,5 +1,9 @@
 package kr.hellogsm.demo.domain.record.domain.entity.application.domain.entity.record;
 
+import kr.hellogsm.demo.domain.record.domain.entity.Category;
+import kr.hellogsm.demo.domain.record.domain.entity.Rating;
+import kr.hellogsm.demo.domain.record.domain.entity.RecodeUtil;
+import kr.hellogsm.demo.domain.record.domain.entity.Semester;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
@@ -16,7 +20,7 @@ class RecodeUtilTest {
     void callRandomRatings() {
         List<Rating> sl = recodeUtil.callRandom일반Ratings();
         for(Rating s : sl)
-            System.out.print(s.getSemester().getValue().toString() + " : " + s.getSubject().getSubject().toString() + " : " + s.getValue().toString() + " \n"  );
+            System.out.print(s.getSemester().getValue().toString() + " : " + s.getSubject().getName().toString() + " : " + s.getValue().toString() + " \n"  );
     }
 
     @Test
@@ -27,8 +31,8 @@ class RecodeUtilTest {
             for (Rating s : sl) {
                 String parents = String.valueOf(s.getSubject().getParents());
                 if(s.getSubject().getParents() != null)
-                    parents = s.getSubject().getParents().getSubject();
-                System.out.println(s.getId() + " " + parents + " " + s.getSubject().getSubject() + " " + s.getSubject().getCategory() + " " + s.getSemester().getValue() + " " + s.getValue());
+                    parents = s.getSubject().getParents().getName();
+                System.out.println(s.getId() + " " + parents + " " + s.getSubject().getName() + " " + s.getSubject().getCategory() + " " + s.getSemester().getValue() + " " + s.getValue());
             }
             System.out.println("------------------------------");
         }
@@ -42,8 +46,8 @@ class RecodeUtilTest {
             for (Rating s : sl) {
                 String parents = String.valueOf(s.getSubject().getParents());
                 if(s.getSubject().getParents() != null)
-                    parents = s.getSubject().getParents().getSubject();
-                System.out.println(s.getId() + " " + parents + " " + s.getSubject().getSubject() + " " + s.getSubject().getCategory() + " " + s.getSemester().getValue() + " " + s.getValue());
+                    parents = s.getSubject().getParents().getName();
+                System.out.println(s.getId() + " " + parents + " " + s.getSubject().getName() + " " + s.getSubject().getCategory() + " " + s.getSemester().getValue() + " " + s.getValue());
             }
             System.out.println("------------------------------");
         }

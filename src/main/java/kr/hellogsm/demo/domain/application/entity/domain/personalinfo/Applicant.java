@@ -18,6 +18,7 @@ public class Applicant {
 
     @Embedded
     Local local;
+    @Column(name = "applicant_telephone")
     String telephone; // TODO telephone 클래스를 만들까?
     @Embedded
     @AttributeOverride(name = "value", column = @Column(name = "applicant_phone_number"))

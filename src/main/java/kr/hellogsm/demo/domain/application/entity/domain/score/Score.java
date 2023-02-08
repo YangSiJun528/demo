@@ -1,8 +1,7 @@
 package kr.hellogsm.demo.domain.application.entity.domain.score;
 
-import com.example.demo.application.entity.domain.Application;
-import jakarta.persistence.Embedded;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.*;
+import kr.hellogsm.demo.domain.application.entity.domain.Application;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -12,17 +11,25 @@ import java.math.BigDecimal;
 
 
 @Getter
+@Entity
+@Table(name = "score")
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
 public class Score {
 
+    @Id
+    @Column(name = "score_id")
     Long id;
 
-    @Embedded
+    @OneToOne
+    @JoinColumn(name = "title_id")
     Title title;
+
+    @Column(name = "score_value")
     BigDecimal value;
 
     @ManyToOne
+    @JoinColumn(name = "application_id")
     Application application;
 
 }

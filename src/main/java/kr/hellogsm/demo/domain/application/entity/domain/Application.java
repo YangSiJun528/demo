@@ -1,21 +1,24 @@
 package kr.hellogsm.demo.domain.application.entity.domain;
 
-import com.example.demo.application.entity.domain.personalinfo.Guardian;
-import com.example.demo.application.entity.domain.personalinfo.Teacher;
-import com.example.demo.application.entity.domain.score.School;
-import com.example.demo.application.entity.domain.personalinfo.Applicant;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Size;
+import kr.hellogsm.demo.domain.application.entity.domain.personalinfo.Applicant;
+import kr.hellogsm.demo.domain.application.entity.domain.personalinfo.Guardian;
+import kr.hellogsm.demo.domain.application.entity.domain.personalinfo.Teacher;
+import kr.hellogsm.demo.domain.application.entity.domain.score.School;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.Columns;
 
 import java.util.List;
 
 @Entity
+@Table(name = "application")
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class Application {
 
     @Id
+    @Column(name = "application_id")
     Long id;
 
     @Embedded
@@ -33,10 +36,12 @@ public class Application {
     Teacher teacher;
 
     @Enumerated(EnumType.STRING) // 전형
+    @Column(name = "application_type")
     Type type;
 
     @Size(min=3, max=3)
     @OneToMany
+    @JoinColumn(name = "desired_department_id")
     List<DesiredDepartment> desiredDepartments;  // 1,2,3 지망 학과
 
     @Embedded

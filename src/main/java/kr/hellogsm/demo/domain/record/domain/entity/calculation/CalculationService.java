@@ -2,7 +2,8 @@ package kr.hellogsm.demo.domain.record.domain.entity.calculation;
 
 
 
-import com.example.demo.application.entity.domain.score.AcademicRecord;
+
+import kr.hellogsm.demo.domain.record.domain.entity.AcademicRecord;
 
 import java.math.BigDecimal;
 
@@ -14,7 +15,7 @@ public class CalculationService {
     }
 
     public BigDecimal calculate(AcademicRecord academicRecord) {
-        return calculationFactory.getCalculation(academicRecord).calculate();
+        return calculationFactory.getCalculation(academicRecord).calculate(); // TODO 디미터 패선 위반 아닌가?
     }
 
     /** https://github.com/kurular4/medium-spring-factory/blob/master/src/main/java/com/omer/medium/factorypattern/service/ViewerService.java

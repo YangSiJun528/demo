@@ -7,38 +7,42 @@ import java.util.Random;
 import java.util.concurrent.atomic.AtomicLong;
 
 public class RecodeUtil {
+
+    private Record dummy_record = null;
+
     private List<Semester> semesters = new ArrayList<>(List.of(Semester.ONETOONE, Semester.ONETOTWO, Semester.TWOTOONE, Semester.TWOTOTWO, Semester.THREETOONE));
 
     private List<Semester> grades = new ArrayList<>(List.of(Semester.ONE, Semester.TWO, Semester.THREE));
 
+
     //환산점은 꼭 있어야 함
     private List<Subject> 일반subjects = new ArrayList<>(List.of(
-            new Subject(null, "국어", Category.GeneralSubject),
-            new Subject(null, "도덕", Category.GeneralSubject),
-            new Subject(null, "사회", Category.GeneralSubject),
-            new Subject(null, "역사", Category.GeneralSubject),
-            new Subject(null, "수학", Category.GeneralSubject),
-            new Subject(null, "과학", Category.GeneralSubject),
-            new Subject(null, "기술가정", Category.GeneralSubject),
-            new Subject(null, "영어", Category.GeneralSubject),
-            new Subject(null, "환산점", Category.GeneralSubject)));
+            new Subject(1L,null, new ArrayList<>(), "국어", Category.GeneralSubject, dummy_record),
+            new Subject(2L, null, new ArrayList<>(), "도덕", Category.GeneralSubject, dummy_record),
+            new Subject(3L, null, new ArrayList<>(), "사회", Category.GeneralSubject, dummy_record),
+            new Subject(4L, null, new ArrayList<>(), "역사", Category.GeneralSubject, dummy_record),
+            new Subject(5L, null, new ArrayList<>(), "수학", Category.GeneralSubject, dummy_record),
+            new Subject(6L, null, new ArrayList<>(), "과학", Category.GeneralSubject, dummy_record),
+            new Subject(7L, null, new ArrayList<>(), "기술가정", Category.GeneralSubject, dummy_record),
+            new Subject(8L, null, new ArrayList<>(), "영어", Category.GeneralSubject, dummy_record),
+            new Subject(9L, null, new ArrayList<>(), "환산점", Category.GeneralSubject, dummy_record)));
 
     private List<Subject> 예체능subjects = new ArrayList<>(List.of(
-            new Subject(null, "체육", Category.ArtSportSubject),
-            new Subject(null, "미술", Category.ArtSportSubject),
-            new Subject(null, "음악", Category.ArtSportSubject),
-            new Subject(null, "환산점", Category.ArtSportSubject)));
+            new Subject(10L, null, new ArrayList<>(), "체육", Category.ArtSportSubject, dummy_record),
+            new Subject(11L, null, new ArrayList<>(), "미술", Category.ArtSportSubject, dummy_record),
+            new Subject(12L, null, new ArrayList<>(), "음악", Category.ArtSportSubject, dummy_record),
+            new Subject(13L, null, new ArrayList<>(), "환산점", Category.ArtSportSubject, dummy_record)));
 
-    private Subject 출결 = new Subject(null, "출결", Category.NonSubject);
-    private Subject 봉사 = new Subject(null, "봉사", Category.NonSubject);
+    private Subject 출결 = new Subject(14L, null, new ArrayList<>(), "출결", Category.NonSubject, dummy_record);
+    private Subject 봉사 = new Subject(15L, null, new ArrayList<>(), "봉사", Category.NonSubject, dummy_record);
     private List<Subject> 비교과subjects = new ArrayList<>(List.of(
-            new Subject(출결, "결석", Category.NonSubject),
-            new Subject(출결, "지각", Category.NonSubject),
-            new Subject(출결, "조퇴", Category.NonSubject),
-            new Subject(출결, "결과", Category.NonSubject),
+            new Subject(15L, 출결, new ArrayList<>(), "결석", Category.NonSubject, dummy_record),
+            new Subject(16L, 출결, new ArrayList<>(), "지각", Category.NonSubject, dummy_record),
+            new Subject(17L, 출결, new ArrayList<>(), "조퇴", Category.NonSubject, dummy_record),
+            new Subject(18L, 출결, new ArrayList<>(), "결과", Category.NonSubject, dummy_record),
 //            new Subject(출결, "환산일수", Category.NonSubject),
 //            new Subject(출결, "환산점", Category.NonSubject),
-            new Subject(봉사, "시간", Category.NonSubject)
+            new Subject(19L, 봉사, new ArrayList<>(), "시간", Category.NonSubject, dummy_record)
             //        new Subject(봉사, "환산점", Category.NonSubject) 비교과 환산점/일수는 모든 학년 당 하나 뿐임
     ));
 

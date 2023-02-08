@@ -1,20 +1,19 @@
 package kr.hellogsm.demo.domain.record.domain.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
 
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Entity
+@Table(name = "season")
 @Getter
 //TODO VO 객체라 hasHash인가 equals 관련된거 override 필요함
 public class Season {
 
     @Id
+    @Column(name = "season_id")
     Long id;
 
     @Enumerated(EnumType.STRING)

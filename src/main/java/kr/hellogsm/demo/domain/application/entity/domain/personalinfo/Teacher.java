@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 @Embeddable
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class Teacher {
+
     private String name;
     @Embedded
     @AttributeOverride(name = "phoneNumber", column = @Column(name = "teacher_phone_number"))
